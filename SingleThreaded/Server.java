@@ -29,6 +29,7 @@ public class Server {
             } catch (Exception e) {
                 // TODO: handle exception
                 e.printStackTrace();
+                socket.close();
             }
             
 
