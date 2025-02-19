@@ -11,9 +11,9 @@ public class Server {
     public Server(int poolSize){
         this.threadPool = Executors.newFixedThreadPool(poolSize);
     }
-    public void handleClient(Socket clienSocket){
-        try(PrintWriter toSocket = new PrintWriter(clienSocket.getOutputStream(),true)){
-            toSocket.println("Hello from server "+ clienSocket.getInetAddress());
+    public void handleClient(Socket clientSocket){
+        try(PrintWriter toSocket = new PrintWriter(clientSocket.getOutputStream(),true)){
+            toSocket.println("Hello from server "+ clientSocket.getInetAddress());
     } catch (IOException e) {
         e.printStackTrace();
     }
